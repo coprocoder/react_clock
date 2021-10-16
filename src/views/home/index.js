@@ -16,43 +16,29 @@ import "./home.scss"
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      clockModeList: []
+    };
     this.selectZones = timezones.map((item, index) => {
       return { value: index, label: item.name, timezone: item.timezone }
     })
-    this.reduxStore = store.getState()
     this.handleChangeZone = this.handleChangeZone.bind(this);
-
   }
 
   componentDidMount() {
-    console.log('Home props', this.props)
     store.subscribe(() => {
-      this.reduxState = store.getState()
-      console.info('reduxState', this.reduxState)
-      // if(this.props.clockModeList == this.reduxState.clockModeList)
-      //   console.info('reduxState same', this.props, this.reduxState)
-
       this.forceUpdate()
     })
   }
 
-  shouldComponentUpdate(nextProps){
-    console.log('shouldComponentUpdate', this.props, nextProps)
-  }
-
   handleChangeZone = (selectedIndex, selectedZone) => {
-    // console.log('handleChangeZone', selectedIndex, selectedZone)
-    this.props.changeZone({ index: selectedIndex, zone: selectedZone.value })
+    if(this.props.clockModeList[selectedIndex] != selectedZone.value)
+      this.props.changeZone({ index: selectedIndex, zone: selectedZone.value })
   }
 
   getClockList = () => (
     this.props.clockModeList.map((item, index) => {
-      // console.log('clockModeList item', item)
-      // console.log('clockModeList timezones[item]', timezones[item])
-
       let curZone = this.selectZones[this.props.clockModeList[index]]
-      console.log('ttt', curZone)
       return <CustomClock
         key={index}
         index={index}
@@ -64,7 +50,6 @@ class Home extends Component {
   )
 
   render() {
-    // console.log('render timezones', timezones)
     console.log('render props', this.props)
     return (
       <div>

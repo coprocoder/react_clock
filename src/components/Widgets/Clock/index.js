@@ -11,7 +11,7 @@ function CustomClock(props) {
 
   useEffect(() => {
     const getNewTime = () => {
-      console.log('CustomClock props', props)
+      // console.log('CustomClock props', props)
       return setInterval(
         () => {
           let new_time = new Date(Date.now() + Number(props.curZone.timezone.slice(1)) * 3600000)
