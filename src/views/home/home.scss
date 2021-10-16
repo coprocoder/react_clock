@@ -1,0 +1,20 @@
+.clock-view {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: -webkit-center;
+    margin: auto;
+    width: 80%;
+    max-width: 1000px;
+    min-width: 500px;
+    
+    .clock-view-item {
+        // width: 50vw;
+        width: 50%;
+        margin-bottom: 50px;
+
+        .clock-item-wrapper {
+            width: 200px;
+            margin: auto;
+        }
+    }
+}
