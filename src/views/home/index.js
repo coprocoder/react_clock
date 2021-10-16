@@ -21,7 +21,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props)
+    console.log('Home props', this.props)
   }
 
   handleChangeZone = (selectedIndex, selectedZone) => {
@@ -55,7 +55,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   addClock: () => dispatch(addClock()),
-  changeZone: () => dispatch(changeZone())
+  changeZone: (index, value) => dispatch(changeZone(index, value))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

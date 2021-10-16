@@ -10,8 +10,6 @@ function CustomClock(props) {
   const [value, setValue] = useState(new Date());
 
   useEffect(() => {
-    // let timezone = "+18"
-
     const getNewTime = () => {
       console.log({ props })
       return setInterval(
