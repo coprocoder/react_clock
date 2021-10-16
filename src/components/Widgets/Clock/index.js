@@ -11,7 +11,7 @@ function CustomClock(props) {
 
   useEffect(() => {
     const getNewTime = () => {
-      console.log({ props })
+      console.log('CustomClock props', props)
       return setInterval(
         () => {
           let new_time = new Date(Date.now() + Number(props.curZone.timezone.slice(1)) * 3600000)
@@ -25,7 +25,7 @@ function CustomClock(props) {
     return () => {
       clearInterval(interval);
     }
-  }, []);
+  });
 
   return (
     <div className="clock-view-item">
@@ -40,7 +40,7 @@ function CustomClock(props) {
         />
         <p>{value.toLocaleTimeString()}</p>
         <Select
-          value={props.selectZones[0]}
+          value={props.curZone}
           onChange={(selectValue) => props.handleChangeZone(props.index,selectValue )}
           options={props.selectZones}
         />

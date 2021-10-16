@@ -1,8 +1,8 @@
 
-const addClock = (newClock) => {
+const addClock = () => {
   return dispatch => {
     // let newClock = {}
-    dispatch(addClockAction(newClock))
+    dispatch(addClockAction())
   }
 }
 
@@ -13,9 +13,8 @@ const changeZone = (newZone) => {
   }
 }
 
-const addClockAction = newClock => ({
-  type: 'ADD_CLOCK',
-  payload: newClock
+const addClockAction = _ => ({
+  type: 'ADD_CLOCK'
 })
 
 const changeZoneAction = newZone => ({

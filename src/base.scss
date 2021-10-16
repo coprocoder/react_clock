@@ -1,9 +1,7 @@
-$LightBlueAccent: #cde7ff;
+//$LightBlueAccent: #cde7ff;
 $LightBlueDarkAccent: #90CAF9;
 $BlueAccent: #54a1e9;
 $BlueDarkAccent: #0180EA;
-$GrayAccent: #F2F1F6;
-$GrayDarkAccent: #949494;
 
 *::-webkit-scrollbar {
     width: 7px;
@@ -52,12 +50,6 @@ body {
     max-width: 100vw;
 }
 
-.content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
 .error {
     display: flex;
     flex-flow: wrap;
@@ -100,17 +92,6 @@ body {
             min-width: 300px;
             width: 50%;
         }
-    }
-}
-
-
-
-@media screen and (max-width: 600px) {
-    .header {
-        bottom: 0;
-        top: auto;
-        position: fixed;
-        z-index: 100;
     }
 }
 

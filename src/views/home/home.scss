@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     text-align: -webkit-center;
     margin: auto;
+    margin-top: 50px;
     width: 80%;
     max-width: 1000px;
     min-width: 500px;
@@ -16,5 +17,12 @@
             width: 200px;
             margin: auto;
         }
+    }
+}
+
+.clock-addBtn {
+    text-align: center;
+    button { 
+        padding: 5px 10px;
     }
 }
