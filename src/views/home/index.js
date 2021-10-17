@@ -70,35 +70,6 @@ class Home extends Component {
   }
 }
 
-// function Home(props) {
-//   const selectZones = timezones.map((item, index) => {
-//     return { value: index, label: item.name }
-//   })
-
-//   const { clockModeList, clockCount } = props;
-
-//   function handleChangeZone(selectedIndex, selectedZone) {
-//     // console.log('handleChangeZone', selectedIndex, selectedZone)
-//     props.changeZone({ index: selectedIndex, zone: selectedZone.value })
-//   }
-
-//   return (
-//     <div className="clock-view">
-//       {clockModeList.map((item, index) => (
-//         <CustomClock
-//           key={index}
-//           index={index}
-//           curZone={timezones[item]}
-//           selectZones={selectZones}
-//           handleChangeZone={handleChangeZone}
-//         />
-//       ))}
-//     </div>
-//   )
-// }
-
-// export default Home;
-
 const mapStateToProps = state => ({
   clockModeList: state.clockModeList
 })

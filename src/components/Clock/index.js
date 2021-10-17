@@ -12,7 +12,11 @@ function CustomClock(props) {
       // console.log('CustomClock props', props)
       return setInterval(
         () => {
-          let new_time = new Date(Date.now() + Number(props.curZone.timezone.slice(1)) * 3600000)
+          let new_time = new Date(
+            Date.now() 
+            + Number(new Date().getTimezoneOffset() * 60 * 1000)
+            + Number(props.curZone.timezone.slice(1)) * 3600000
+          )
           setValue(new_time)
         },
         1000
