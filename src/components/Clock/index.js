@@ -5,18 +5,18 @@ import Select from 'react-select';
 // import 'react-clock/dist/Clock.css';
 
 function CustomClock(props) {
-  const [value, setValue] = useState(new Date());
+  const curDate = Date.now() 
+    + Number(new Date().getTimezoneOffset() * 60 * 1000)
+    + Number(props.curZone.timezone.slice(1)) * 3600000
+
+  const [value, setValue] = useState(new Date(curDate));
 
   useEffect(() => {
     const getNewTime = () => {
       // console.log('CustomClock props', props)
       return setInterval(
         () => {
-          let new_time = new Date(
-            Date.now() 
-            + Number(new Date().getTimezoneOffset() * 60 * 1000)
-            + Number(props.curZone.timezone.slice(1)) * 3600000
-          )
+          let new_time = new Date(curDate)
           setValue(new_time)
         },
         1000
