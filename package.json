@@ -29,10 +29,13 @@
     "yarn": "^1.22.15"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "webpack",
+    "debug": "webpack --watch",
+    "start": "webpack-dev-server",
+    "simple_start": "react-scripts start",
+    "simple_build": "react-scripts build",
+    "simple_test": "react-scripts test",
+    "simple_eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -52,5 +55,23 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.7",
+    "html-webpack-plugin": "^4.5.2",
+    "sass-loader": "^12.2.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.58.2",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.3.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ]
+  }
 }

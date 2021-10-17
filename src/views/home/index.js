@@ -3,18 +3,16 @@ import { connect } from 'react-redux';
 import { animateScroll as scroll } from "react-scroll";
 
 
-// Мои модули
 import { addClock, changeZone } from '../../redux/actions';
-import CustomClock from '../../components/Widgets/Clock';
 import store from '../../redux/store'
+
+import CustomClock from '../../components/Clock';
+import ScrollToTopBtn from '../../components/Buttons/ScrollToTopBtn';
 
 import timezones from '../../timezones.json'
 
-// Стили
 import "./home.scss"
-import ScrollToTopBtn from '../../components/Buttons/ScrollToTopBtn';
 
-// class Home extends PureComponent {
 class Home extends Component {
   constructor(props) {
     super(props);
