@@ -1,3 +1,8 @@
+// var Map = require("immutable").Map;
+// const initialMap = Map()  
+// initialMap.set('clockModeList', [0, 0])
+// console.log({initialMap})
+
 const initialState = {
   clockModeList: [0, 0]
 }

@@ -1,5 +1,6 @@
 import React, { Component, PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { animateScroll as scroll } from "react-scroll";
 
 
 // Мои модули
@@ -11,6 +12,7 @@ import timezones from '../../timezones.json'
 
 // Стили
 import "./home.scss"
+import ScrollToTopBtn from '../../components/Buttons/ScrollToTopBtn';
 
 // class Home extends PureComponent {
 class Home extends Component {
@@ -49,14 +51,22 @@ class Home extends Component {
     })
   )
 
+  handleAddClock = () => {
+    this.props.clockModeList.length < 24 && this.props.addClock()
+    scroll.scrollToBottom();
+  }
+
   render() {
     console.log('render props', this.props)
     return (
       <div>
-        <div className="clock-view">
+        <div className="clock-view" ref={ (clockListElement) => { this.clockListElement = clockListElement } }>
           {this.getClockList()}
         </div>
-        <div className="clock-addBtn" onClick={() => this.props.addClock()}><button>Добавить</button></div>
+        <div className="clock-addBtn">
+          <button onClick={() => this.handleAddClock()}>Добавить</button>
+        </div>
+        <ScrollToTopBtn/>
       </div>
     )
   }
