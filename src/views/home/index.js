@@ -58,16 +58,15 @@ class Home extends Component {
   }
 
   getClockList = () => (
-    this.props.clockModeList.map((item, index) => {
-      let curZone = this.props.timezones[this.props.clockModeList[index]]
-      return <CustomClock
+    this.props.clockModeList.map((item, index) => (
+      <CustomClock
         key={index}
         index={index}
-        curZone={curZone}
+        curZone={this.props.timezones[this.props.clockModeList[index]]}
         selectZones={this.props.timezones}
         handleChangeZone={this.handleChangeZone}
       />
-    })
+    ))
   )
 
   render() {

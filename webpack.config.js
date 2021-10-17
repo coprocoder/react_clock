@@ -13,7 +13,18 @@ module.exports = {
       directory: path.join(__dirname, 'public'),
     },
     compress: true,
-    port: 3000,
+    // host: '0.0.0.0',      
+    host: 'localhost',      
+    port: 3000, 
+    open: true,           // Открыть бразуер
+    allowedHosts: 'auto', // localhost
+    // https: true,          // Самоподписанный сертификат
+    client: {   
+      overlay: {
+        errors: true,
+        warnings: false,
+      },
+    }
   },
   module: {
     rules: [
@@ -56,7 +67,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.css','.scss'],
-    modules: ['node_modules', 'src'],   
+    extensions: ['.js', '.jsx', '.css', '.scss'],
+    modules: ['node_modules', 'src'],
   },
 };
