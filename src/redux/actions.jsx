@@ -1,17 +1,22 @@
 
 const addClock = () => {
   return dispatch => {
-    // let newClock = {}
     dispatch(addClockAction())
   }
 }
 
 const changeZone = (newZone) => {
-  console.log('changeZone', newZone)
   return dispatch => {
     dispatch(changeZoneAction(newZone))
   }
 }
+
+const loadTimezones = (timezones) => {
+  return dispatch => {
+    dispatch(loadTimezonesAction(timezones))
+  }
+}
+
 
 const addClockAction = _ => ({
   type: 'ADD_CLOCK'
@@ -22,5 +27,10 @@ const changeZoneAction = newZone => ({
   payload: newZone
 })
 
+const loadTimezonesAction = timezones => ({
+  type: 'LOAD_ZONES',
+  payload: timezones
+})
 
-module.exports = { changeZone, addClock };
+
+module.exports = { changeZone, addClock, loadTimezones };

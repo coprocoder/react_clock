@@ -13,7 +13,6 @@ function CustomClock(props) {
 
   useEffect(() => {
     const getNewTime = () => {
-      // console.log('CustomClock props', props)
       return setInterval(
         () => {
           let new_time = new Date(curDate)

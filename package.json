@@ -32,8 +32,6 @@
     "build": "webpack",
     "debug": "webpack --watch",
     "start": "webpack-dev-server",
-    "simple_start": "react-scripts start",
-    "simple_build": "react-scripts build",
     "simple_test": "react-scripts test",
     "simple_eject": "react-scripts eject"
   },

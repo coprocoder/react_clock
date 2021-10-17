@@ -1,8 +1,4 @@
 const path = require("path");
-const resolve = require('path').resolve
-const globalCSS = resolve(__dirname, 'public/globals')
-
-//"webpack": "^4.42.1",
 
 module.exports = {
   entry: "./src/index.js",

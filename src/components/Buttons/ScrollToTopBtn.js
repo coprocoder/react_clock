@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { animateScroll as scroll } from "react-scroll";
 
-// FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 

@@ -1,10 +1,6 @@
-// var Map = require("immutable").Map;
-// const initialMap = Map()  
-// initialMap.set('clockModeList', [0, 0])
-// console.log({initialMap})
-
 const initialState = {
-  clockModeList: [0, 0]
+  clockModeList: [0, 0],
+  timezones: undefined
 }
 
 var reducer = function (state = initialState, action) {
@@ -17,6 +13,8 @@ var reducer = function (state = initialState, action) {
       let newZoneList = state.clockModeList
       newZoneList[action.payload.index] = action.payload.zone
       return {...state, clockModeList: newZoneList};
+    case "LOAD_ZONES":
+      return {...state, timezones: action.payload};
     default:
       return state;
   }
