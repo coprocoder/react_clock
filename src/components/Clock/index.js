@@ -3,6 +3,7 @@ import Clock from 'react-clock';
 import Select from 'react-select';
 
 // import 'react-clock/dist/Clock.css';
+import './clock.scss'
 
 function CustomClock(props) {
   const curDate = Date.now() 
